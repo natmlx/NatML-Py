@@ -1,0 +1,19 @@
+# Python
+__pycache__
+.pytest_cache
+
+# IDE
+.vscode
+.vs
+.idea
+
+# Images
+*.png
+*.jpg
+*.jpeg
+*.gif
+!test/media/**/*.jpg
+!test/media/**/*.jpeg
+
+# Misc
+.DS_Store
