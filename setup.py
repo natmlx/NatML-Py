@@ -19,7 +19,7 @@ with open("natml/version.py") as version_source:
 setup(
     name="natml",
     version=version,
-    author="Yusuf Olokoba",
+    author="NatML",
     author_email="hi@natsuite.io",
     description="Zero configuration machine learning.",
     long_description=long_description,
