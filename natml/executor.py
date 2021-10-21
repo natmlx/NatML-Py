@@ -4,7 +4,7 @@
 #
 
 from abc import ABC, abstractmethod
-from typing import List
+from typing import List, Union
 
 from .model_data import MLModelData
 from .feature import MLFeature
@@ -32,7 +32,7 @@ class MLExecutor (ABC):
         pass
 
     @abstractmethod
-    def predict (self, *inputs: List[MLFeature]) -> List[MLFeature]:
+    def predict (self, *inputs: List[MLFeature]) -> Union[MLFeature, List[MLFeature]]:
         """
         Make a prediction on one or more input features.
 
@@ -40,6 +40,6 @@ class MLExecutor (ABC):
             inputs (list): Input features.
 
         Returns:
-            list: Output features.
+            MLFeature | list: Output feature(s).
         """
         pass
