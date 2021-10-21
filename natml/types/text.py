@@ -5,9 +5,9 @@
 
 from ..type import MLFeatureType
 
-class MLArrayType (MLFeatureType): # INCOMPLETE
+class MLTextType (MLFeatureType): # INCOMPLETE
     """
-    ML array feature type.
+    ML text feature type.
     """
 
     def __init__ (self): # INCOMPLETE

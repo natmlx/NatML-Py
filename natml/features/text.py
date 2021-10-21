@@ -5,6 +5,7 @@
 
 from ..feature import MLFeature
 from ..internal.hub_feature import MLHubFeature
+from ..types import MLTextType
 
 class MLTextFeature (MLFeature, MLHubFeature):
     """
@@ -16,5 +17,8 @@ class MLTextFeature (MLFeature, MLHubFeature):
         self.__text = text
 
     @property
-    def text (self):
+    def text (self) -> str:
         return self.__text
+
+    def serialize (self) -> dict: # INCOMPLETE
+        pass

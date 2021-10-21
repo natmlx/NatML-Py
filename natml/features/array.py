@@ -7,6 +7,7 @@ from numpy import ndarray
 
 from ..feature import MLFeature
 from ..internal.hub_feature import MLHubFeature
+from ..types import MLArrayType
 
 class MLArrayFeature (MLFeature, MLHubFeature):
     """
@@ -18,5 +19,8 @@ class MLArrayFeature (MLFeature, MLHubFeature):
         self.__data = array
 
     @property
-    def data (self):
+    def data (self) -> ndarray:
         return self.__data
+
+    def serialize (self) -> dict: # INCOMPLETE
+        pass

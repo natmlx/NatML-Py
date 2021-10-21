@@ -11,5 +11,5 @@ class MLHubFeature (ABC):
         super().__init__()
 
     @abstractmethod
-    def create (self) -> dict: # Serialized
+    def serialize (self) -> dict:
         pass

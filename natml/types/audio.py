@@ -12,8 +12,8 @@ class MLAudioType (MLFeatureType): # INCOMPLETE
     Audio type always represents floating-point linear PCM data.
     """
 
-    def __init__ (self):
-        pass
+    def __init__ (self): # INCOMPLETE
+        super().__init__("", "")
 
     @property
     def sample_rate (self):

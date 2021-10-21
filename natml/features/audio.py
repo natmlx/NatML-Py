@@ -7,6 +7,7 @@ from numpy import ndarray
 
 from ..feature import MLFeature
 from ..internal.hub_feature import MLHubFeature
+from ..types import MLAudioType
 
 class MLAudioFeature (MLFeature, MLHubFeature):
     """
@@ -28,5 +29,8 @@ class MLAudioFeature (MLFeature, MLHubFeature):
         self.__sample_buffer = sample_buffer
 
     @property
-    def sample_buffer (self):
+    def sample_buffer (self) -> ndarray:
         return self.__sample_buffer
+
+    def serialize (self) -> dict: # INCOMPLETE
+        pass
