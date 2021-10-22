@@ -10,15 +10,18 @@ from ..types import MLTextType
 class MLTextFeature (MLFeature, MLHubFeature):
     """
     ML text feature.
+
+    Parameters:
+        text (str): Input text.
     """
 
-    def __init__ (self, text: str):
-        super().__init__(None) # INCOMPLETE
+    def __init__ (self, text: str): # INCOMPLETE # Type
+        super().__init__(None)
         self.__text = text
 
     @property
     def text (self) -> str:
         return self.__text
 
-    def serialize (self) -> dict: # INCOMPLETE
-        pass
+    def serialize (self) -> dict:
+        return { "data": self.__text, "type": "STRING" }

@@ -15,17 +15,14 @@ class MLAudioFeature (MLFeature, MLHubFeature):
 
     The audio feature is stored as an array with shape (S,C)
     in range [-1., 1.] where `S` is the sample count and `C` is the channel count.
+
+    Parameters:
+        sample_buffer (ndarray): Interleaved linear PCM sample buffer with shape (S,C) in range [-1., 1.].
+        sample_rate (int): Sample rate in Hz.
     """
 
-    def __init__ (self, sample_buffer: ndarray, sample_rate: int):
-        """
-        Create an audio feature.
-
-        Parameters:
-            sample_buffer (ndarray): Interleaved linear PCM sample buffer with shape (S,C) in range [-1., 1.].
-            sample_rate (int): Sample rate in Hz.
-        """
-        super().__init__(None) # INCOMPLETE
+    def __init__ (self, sample_buffer: ndarray, sample_rate: int): # INCOMPLETE # Type
+        super().__init__(None)
         self.__sample_buffer = sample_buffer
 
     @property

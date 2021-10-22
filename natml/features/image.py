@@ -3,9 +3,9 @@
 #   Copyright (c) 2021 Yusuf Olokoba.
 #
 
-from numpy import array, ndarray
+from base64 import b64encode
+from io import BytesIO
 from PIL import Image
-from typing import Union
 
 from ..feature import MLFeature
 from ..internal.hub_feature import MLHubFeature
@@ -15,22 +15,23 @@ class MLImageFeature (MLFeature, MLHubFeature):
     """
     ML image feature.
 
-    The image feature is stored as an array with shape (H,W,C).
+    Parameters:
+        image (PIL.Image): Input image.
     """
 
-    def __init__ (self, image: Union[Image.Image, ndarray]):
-        """
-        Create an image feature.
-
-        Parameters:
-            image (PIL.Image | ndarray): RGB image in range [0, 255].
-        """
-        super().__init__(None) # INCOMPLETE
-        self.__image = array(image) if isinstance(image, Image.Image) else image
+    def __init__ (self, image: Image.Image): # INCOMPLETE # Type
+        super().__init__(None) 
+        self.__image = image
 
     @property
-    def image (self) -> ndarray:
+    def image (self) -> Image.Image:
         return self.__image
 
-    def serialize (self) -> dict: # INCOMPLETE
-        pass
+    def serialize (self) -> dict:
+        image_buffer = BytesIO()
+        self.__image.save(image_buffer, format="JPEG")
+        encoded_data = image_buffer.getvalue()
+        return {
+            "data": b64encode(encoded_data).decode("ascii"),
+            "type": "IMAGE"
+        }
