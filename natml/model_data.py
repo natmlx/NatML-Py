@@ -29,7 +29,7 @@ class MLModelData:
 
         This is `None` if the model does not have any classification labels.
         """
-        return self.__predictor["labels"]
+        return self.__predictor["labels"].clone()
 
     @property
     def normalization (self) -> Normalization:
@@ -39,7 +39,8 @@ class MLModelData:
         This is `None` if the model does not use normalization.
         """
         normalization = self.__predictor["normalization"]
-        return normalization["mean"], normalization["std"]
+        mean, std = normalization["mean"], normalization["std"]
+        return MLModelData.Normalization(mean, std)
 
     @property
     def audio_format (self) -> AudioFormat:
@@ -48,7 +49,9 @@ class MLModelData:
 
         This is `None` if the model does not use audio features.
         """
-        self.__predictor["audioFormat"]
+        format = self.__predictor["audioFormat"]
+        sample_rate, channel_count = format["sampleRate"], format["channelCount"]
+        return MLModelData.AudioFormat(sample_rate, channel_count)
 
     def deserialize (self) -> MLModel:
         """
