@@ -1,6 +1,10 @@
 # Python
 __pycache__
 .pytest_cache
+build/
+dist/
+*.egg
+*.egg-info/
 
 # IDE
 .vscode

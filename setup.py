@@ -42,4 +42,8 @@ setup(
         "Topic :: Scientific/Engineering :: Image Recognition",
         "Topic :: Software Development :: Libraries",
     ],
+    project_urls={
+        "Documentation": "https://docs.natml.ai/python",
+        "Source": "https://github.com/natsuite/NatML-Py"
+    },
 )
