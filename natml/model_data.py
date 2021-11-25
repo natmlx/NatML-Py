@@ -29,7 +29,7 @@ class MLModelData:
 
         This is `None` if the model does not have any classification labels.
         """
-        return self.__predictor["labels"].clone()
+        return self.__predictor["labels"].copy()
 
     @property
     def normalization (self) -> Normalization:
@@ -60,11 +60,8 @@ class MLModelData:
         Returns:
             MLModel: ML model.
         """
-        # Check session
         assert self.__predictor["session"], "Cannot deserialize model data because session is invalid"
-        # Check type
         assert self.__predictor["type"] == "HUB", "Edge model deserialization is not yet supported"
-        # Create Hub model
         return MLHubModel(self.__predictor["session"])
 
     @staticmethod
