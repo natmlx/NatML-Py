@@ -32,8 +32,11 @@ setup(
         "torch",
         "torchvision"
     ],
-    url="https://github.com/natsuite/NatML-Py",
-    packages=find_packages(include=["natml", "natml.*"]),
+    url="https://natml.ai",
+    packages=find_packages(
+        include=["natml", "natml.*"],
+        exclude=["test", "examples"]
+    ),
     package_data={ },
     classifiers=[
         "Programming Language :: Python :: 3",
