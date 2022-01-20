@@ -4,8 +4,8 @@
 #
 
 from argparse import ArgumentParser
-from .predictors import create_predictor
-from .templates import create_template
+from .predictor import create_predictor
+from .template import create_template
 from ..version import __version__
 
 # Define constants
