@@ -1,7 +1,4 @@
-imageio
-matplotlib
 numpy
-onnx
-onnxruntime
-torch
-torchvision
+path
+Pillow
+pyyaml

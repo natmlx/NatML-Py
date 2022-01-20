@@ -37,12 +37,10 @@ setup(
     license="Apache License 2.0",
 	python_requires=">=3.6",
     install_requires=[
-        "imageio",
         "numpy",
         "path",
-        "pyyaml",
-        "torch",
-        "torchvision"
+        "Pillow",
+        "pyyaml"
     ],
     url="https://natml.ai",
     packages=find_packages(
