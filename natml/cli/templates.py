@@ -36,7 +36,6 @@ def create_template (args: Namespace):
         elif args.framework == "python":
             pass
 
-
 def _hydrate (input: str, args: Namespace) -> str:
     """
     Hydrate a template string with provided arguments.
