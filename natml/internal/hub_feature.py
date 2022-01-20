@@ -1,15 +1,16 @@
 # 
 #   NatML
-#   Copyright (c) 2021 Yusuf Olokoba.
+#   Copyright (c) 2022 Yusuf Olokoba.
 #
 
-from abc import ABC, abstractmethod
+from enum import Enum
+from io import BytesIO
+from typing import TypedDict
 
-class MLHubFeature (ABC):
+class MLHubDataType (Enum):
+    pass
 
-    def __init__ (self):
-        super().__init__()
-
-    @abstractmethod
-    def serialize (self) -> dict:
-        pass
+class MLHubFeature (TypedDict):
+    data: BytesIO
+    type: MLHubDataType
+    shape: list
