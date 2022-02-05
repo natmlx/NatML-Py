@@ -3,7 +3,6 @@
 #   Copyright (c) 2022 Yusuf Olokoba.
 #
 
-from os import path, walk
 from setuptools import find_packages, setup
 
 # Get readme
@@ -15,15 +14,6 @@ with open("natml/version.py") as version_source:
     gvars = {}
     exec(version_source.read(), gvars)
     version = gvars["__version__"]
-
-# Load template data
-def package_files(directory):
-    paths = []
-    for file_path, _, filenames in walk(directory):
-        for filename in filenames:
-            paths.append(path.join("..", file_path, filename))
-    return paths
-template_data = package_files("natml/cli/templates")
 
 # Setup
 setup(
@@ -47,9 +37,6 @@ setup(
         include=["natml", "natml.*"],
         exclude=["test", "examples"]
     ),
-    package_data={
-        "": template_data
-    },
     entry_points={
         "console_scripts": [
             "natml=natml.cli.__init__:main"
