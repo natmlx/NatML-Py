@@ -5,5 +5,5 @@
 
 from argparse import Namespace
 
-def create_predictor (args: Namespace):
+def login_cli (args: Namespace):
     pass
