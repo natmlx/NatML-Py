@@ -28,9 +28,7 @@ setup(
 	python_requires=">=3.6",
     install_requires=[
         "numpy",
-        "path",
         "Pillow",
-        "pyyaml"
     ],
     url="https://natml.ai",
     packages=find_packages(

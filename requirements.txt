@@ -1,4 +1,2 @@
 numpy
-path
 Pillow
-pyyaml
